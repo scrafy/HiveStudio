@@ -1,0 +1,177 @@
+.panel-control{
+    background-color: green;
+    height: 100px;
+    padding: 1em 0.5em;
+    position: relative;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    top: -100px;
+    margin-bottom: 3em;
+    -webkit-transition: top 0.5s ease-in;
+    transition: top 0.5s ease-in;
+    z-index: 80;
+    &:before{
+        content: '\64';
+        text-align: center;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        position: absolute;
+        bottom: -30px;
+        width: 3em;
+        background-color: green;
+        cursor: pointer;
+        left: calc(50% - 35px);
+        color: $orange;
+        font-size: 1.5em;
+        padding: 4px 0;
+        
+
+    }
+    & .panel-control__items{
+        display: flex;
+        justify-content: space-around;
+        & .panel-control__item{
+            width: 78px;
+            @include screen(480,"width",110px);
+            height: 70px;
+            &:hover{
+                cursor: pointer;
+            }
+            background-size: contain;
+            background-repeat: no-repeat;
+            &#item-farm{
+                background-image: url("../../assets/img/honeycomb1.png")
+            }
+            &#item-hive{
+                background-image: url("../../assets/img/hive.svg")
+            }
+            &#item-bee{
+                width: 70px;
+                background-image: url("../../assets/img/bee.png")
+            }
+        }
+       
+    }
+}
+
+.farms-area{
+    border:2px solid green;
+    border-radius: 10px;
+    padding: 0.5em;
+    height: 300px;
+    @include screen(1024, "height", 392px);
+    margin-bottom: 2em;
+    overflow-y: auto;
+    position: relative;
+    & ::-webkit-scrollbar-thumb {
+        background: green; 
+    }
+    & .hive-info{
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        @include screen(768, "width", 70%);
+        @include screen(1024, "width", 50%);
+        height: 100%;
+        z-index: 5000;
+        padding: 1.5em;
+        transition: left 0.5s ease-in-out;
+        & .hive-info__main{
+            width: 100%;
+            background: green;
+            height: 100%;
+            overflow-y: auto;
+            padding: 1em;
+            border-radius: 10px;
+            background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 45%, rgba(248,171,5,1) 100%);
+            & .icon-x{
+                text-align: left;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            & ul{
+                margin-bottom: 1em;
+                &:first-of-type{
+                    margin-top: 1em;
+                }
+            }
+            & .hive-info__main-hiveid{
+                text-align: right;
+                font-size: 1em;
+                margin-bottom: 0;
+            }
+            & .hive-info__main-detail{
+                margin-top: 1em;
+                border:1px solid green;
+                padding: 1em;
+                border-radius: 10px;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                font-size: 0.8em;
+                @include screen(480, "font-size", 1em);
+                & > div{
+                    margin-top: 0.5em;
+                    & > p{
+                        margin:0;
+                        &:first-child{
+                           margin-bottom:  0.3em;
+                        }
+                        &:last-child{
+                            margin-bottom: 0;
+                        }
+                        & > span{
+                            color:green;
+                        }
+                        
+                    }
+
+               }
+            }
+        }
+    }
+    & > div{
+        width: 100%;
+    }
+    background-color: #008000;
+    & .farms-area__item{
+        position: relative;
+        width: 100%;
+        @include screen(620, "width", 75%);
+        @include screen(768, "width", 65%);
+        @include screen(1024, "width", 58%);
+        @include screen(1280, "width", 46%);
+        height: 277px;
+        @include screen(1024, "height", 372px);
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        background-image: url("../../assets/img/honeycomb1.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: center;
+        background-position-y: center;
+        overflow-y: auto;
+        margin:0 auto;
+        & .farms-area__item__panel-control{
+            padding: 0.3em;
+            display: flex;
+            height: 55px;
+            width: 87px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            transition: height 0.2s linear, padding 0.2s linear;
+            justify-content: space-between;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.hide-hive-info{
+    left:0 !important;
+}

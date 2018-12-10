@@ -1,0 +1,75 @@
+#root{
+     height: 100%;
+     max-width: 1280px;
+     margin:0 auto;
+     position: relative;
+}
+
+body{
+
+    background: url('../img/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.width100{
+    width: 100%;
+}
+
+.float-left{
+    float:left !important;
+}
+
+.text-aling-left{
+    text-align: left !important;
+}
+
+.no-margin-left{
+    margin-left: 0 !important;
+}
+
+.clear{
+    clear: both;
+}
+
+.slide{
+    background-color: transparent !important;
+}
+
+.display-block{
+    display: block !important;
+}
+
+.max-opacity{
+    opacity: 1 !important;
+}
+
+.top-0{
+    top:0 !important;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px orange; 
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: green; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: green;
+    cursor: pointer;
+}
